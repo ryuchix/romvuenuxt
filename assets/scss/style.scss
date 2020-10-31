@@ -1,0 +1,298 @@
+h1{ font-size:24px; line-height:34px; font-weight:600;}
+h2{ font-size:21px; line-height:32px; font-weight:600;}
+h3{ font-size:18px; line-height:30px; font-weight:600;}
+h4{ font-size:17px; line-height:28px; font-weight:600;}
+h5{ font-size:16px; line-height:26px; font-weight:600;}
+h6{ font-size:15px; line-height:22px; font-weight:800;}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: $white;
+        color: $black
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: $black;
+        color: $white;
+    }
+}
+
+body {
+    width: 640px;
+    @media only screen and (max-width: 768px) {
+        width: 100%;  
+    }
+    margin: 0 auto;
+    @include defaultfont;
+    font-display: swap;
+    line-height: 22px;
+    font-size: 16px;
+    min-height: 100%;
+    overflow-y: auto;
+    color: $primary;
+    background-color: #1e272e;
+}
+
+a {
+    color: $primary !important;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    &:hover {
+        color: $primary;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    }
+}
+
+
+#error {
+    display: flex;
+    height: 80vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        @include defaultfont;
+        color: $primary;
+    }
+
+    img {
+      width: 150px;
+    }
+}
+
+// footer
+.v-bottom-navigation {
+    @include userselect;
+    button {
+        height: inherit !important;
+    }
+    span {
+        @include defaultfont;
+        font-weight: 400;
+        color: $primary;
+    }
+    .icon {
+        width: 25px;
+    }
+}
+
+.v-bottom-navigation--fixed {
+    margin: 0 auto;
+    left: auto !important;
+}
+
+.center {
+    text-align: center !important;
+}
+
+.right {
+    text-align: right !important;
+}
+
+.left {
+    text-align: left !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.subtit {
+    @include defaultfont;
+    color: $primary;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    font-weight: 400;
+}
+
+.v-application ul {
+    padding-left: 0 !important;
+}
+
+// header
+header {
+    width: 640px;
+    @media only screen and (max-width: 768px) {
+        width: 100%;  
+    }
+    margin: 0 auto;
+    background-color: $primary !important;
+    border-bottom: solid 0px rgba(0,0,0,.03);
+    box-shadow: 0 4px 18px 0 rgba(0,0,0,.08);
+    transition: all 350ms ease;
+
+    .v-toolbar__content {
+        color: $white;
+        button {
+            span {
+                color: $white;
+            }
+        }
+        .v-toolbar__title {
+            font-size: 1rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+
+            sup {
+                text-transform: none;
+            }
+        }
+        
+    }
+
+}
+
+.v-navigation-drawer {
+    left: auto;
+    .drawer-header {
+        min-height: 50px;
+        background: $primary;
+        border-bottom: solid 0px rgba(0,0,0,.03);
+        box-shadow: 1 4px 18px 0 rgba(0,0,0,.08);
+        transition: all 350ms ease;
+        .v-list-item__title {
+            color: $white;
+            font-size: 1rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-transform: uppercase;
+            width: 100%;
+            font-weight: bold;
+        }
+    }
+    .subheader {
+        text-transform: uppercase;
+        font-size: 12px;
+        color: #90A4AE;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: -15px;
+        line-height: 48px;
+        padding-left: 20px;
+    }
+}
+
+.v-bottom-navigation {
+    width: 640px !important;
+    max-width: 640px;
+    @media only screen and (max-width: 768px) {
+        width: 100%;  
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+#search {
+    width: 640px;
+    @media only screen and (max-width: 768px) {
+        width: 100%;  
+    }
+    display: block;
+    padding: 0;
+    background: #fff;
+    border-bottom: 1px solid #FFF;
+    position: fixed;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.1), 0 1px 3px 0 rgba(0,0,0,0.08);
+    left: 0;
+    top: -50%;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1001;
+    transition: 0.2s all ease-in-out;
+    &:before {
+        content: '';
+        height: env(safe-area-inset-top);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 99999;
+        background: #1E74FD;
+    }
+    &.show {
+        top: env(safe-area-inset-top);
+        transition: 0.3s all;
+    }
+    .search-form {
+        display: flex;
+        width: 100%;
+        height: 50px;
+    }
+    .searchbox {
+        width: 100%;
+        margin: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .form-control {
+            box-shadow: none !important;
+            border: 0 !important;
+            border-radius: 0;
+            height: 56px;
+            padding: 0 56px 0 56px;
+            background: transparent;
+            font-size: 17px;
+            color: #141515;
+            width: 100%;
+        }
+        .input-icon {
+            font-size: 26px;
+            position: absolute;
+            left: 8px;
+            width: 46px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #A1A1A2;
+            top: 0;
+        }
+        .close {
+            opacity: 1;
+            color: #A1A1A2;
+            width: 46px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: 8px;
+            top: 0;
+        }
+    }
+}
+
+.content {
+    padding: 60px 10px 70px 10px;
+    min-height: 100vh;
+}
+
+.clear {
+    clear: both;
+    margin-top: 1em
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.vld-overlay {
+    bottom: 60px !important;
+    top: 50px !important;
+    .vld-background {
+        opacity: 1 !important;
+    }
+}

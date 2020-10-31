@@ -1,0 +1,143 @@
+.card_ {
+    @include cardcontainer;
+    cursor: auto;
+    .card-body {
+        padding: 15px 15px;
+        flex: 1 1 auto;
+        min-height: 1px;
+    }
+    .monsters {
+        padding: 0;
+        width: 100%;
+        margin-bottom: 0;
+        transition: .2s ease-in-out;
+        padding: 2px;
+        display: flex;
+        border: 1px solid transparent;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        flex-direction: row;
+        align-items: center;
+        .monster-details {
+            display: inline-block;
+            line-height: 10px;
+
+            .star-1 {
+                width: 10px;
+                height: 11px;
+                margin: 1px auto 0;
+                background: url('assets/images/star.png') -10px -1px;
+                background-repeat: no-repeat;
+            }
+            .star-2 {
+                width: 20px;
+                height: 11px;
+                margin: 1px auto 0;
+                background: url('assets/images/star.png') -10px -1px;
+                background-repeat: no-repeat;
+            }
+            .star-3 {
+                width: 30px;
+                height: 11px;
+                margin: 1px auto 0;
+                background: url('assets/images/star.png') -10px -1px;
+                background-repeat: no-repeat;
+            }
+            .star-4 {
+                width: 40px;
+                height: 11px;
+                margin: 1px auto 0;
+                background: url('assets/images/star.png') -10px -1px;
+                background-repeat: no-repeat;
+            }
+        }
+        .col-12 {
+            display: flex;
+        }
+        .monster-image {
+            @include imagecontainer;
+            &.mvp {
+                &:after {
+                    background: url('assets/images/monster-icon-min.png') 0;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    top: -4px;
+                    left: -4px;
+                    background-size: 150px;
+                    content: '';
+                    width: 23px;
+                    height: 27px;
+                    background-position: 0 0;
+                }
+            }
+            &.mini {
+                &:after {
+                    background: url('assets/images/monster-icon-min.png') 0;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    top: -4px;
+                    left: -4px;
+                    background-size: 150px;
+                    content: '';
+                    width: 27px;
+                    height: 24px;
+                    background-position: -30px 0;
+                }
+            }
+            &.star {
+                &:after {
+                    background: url('assets/images/monster-icon-min.png') 0;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    top: 0px;
+                    left: auto;
+                    right: 0;
+                    background-size: 150px;
+                    content: '';
+                    width: 18px;
+                    height: 18px;
+                    background-position: 0 -30px;
+                }
+            }
+            &.undead {
+                &:after {
+                    background: url('assets/images/monster-icon-min.png') 0;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    top: -5px;
+                    left: -4px;
+                    background-size: 150px;
+                    content: "";
+                    width: 30px;
+                    height: 30px;
+                    background-position: -30px -26px;
+                }
+            }
+        }
+        img {
+           @include imagecontainer_img;
+           padding: 0px;
+        }
+        .monster-info {
+            align-self: center;
+            .monster-name {
+                margin-left: 6px;
+                font-size: 1.3em;
+                font-weight: 500;
+                color: $primary;
+            }
+            .monster-attr {
+                color: $disabled;
+                margin-left: 6px;
+            }
+            .monster-stats {
+                color: $black;
+                font-size: 1em;
+            }
+            .monster-stats_ {
+                text-transform: uppercase;
+                font-size: .9em;
+            }
+        }
+    }
+}

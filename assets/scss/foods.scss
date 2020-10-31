@@ -1,0 +1,159 @@
+.foods {
+  border-bottom: 1px solid $bordercolor;
+  padding-bottom: 15px;
+  .foods_ {
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    cursor: pointer;
+    .card-details {
+        display: inline-block;
+        line-height: 10px;
+        .image {
+            border: 2px solid #abd2f3;
+            @include imagecontainer;
+            width: 74px;
+            height: 74px;
+            img {
+                @include imagecontainer_img;
+                width: 70px;
+                height: 70px;
+                padding: 10px;
+                border: 0px solid #fff;
+            }
+        }
+        .card-type {
+            position: relative;
+            padding: 5px 0;
+            text-align: center;
+            color: $disabled;
+            line-height: 1.2em;
+        }
+    }
+    .card-info {
+        .card-name {
+            margin-left: 6px;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: $primary;
+        }
+        .card-attr {
+            margin-left: 6px;
+            .card-type_ {
+                color: $accent;
+                font-size: .8em;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+            .card-type__ {
+                margin-top: -3px;
+                color: $accent;
+                font-size: .6em;
+                font-weight: 600;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+        }
+        .card-stats {
+            margin-left: 2px;
+            margin-top: 3px;
+            &.deposit {
+                font-size: 0.8em;
+                margin-top: -0.5em;
+            }
+            &.unlock {
+                font-size: 0.8em;
+                margin-top: -0.5em;
+            }
+            ul {
+                li {
+                    font-size: 0.8em;
+                    line-height: 1.5em;
+                    color: $black;
+                    position: relative;
+                    padding-left: 14px;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        width: 0;
+                        height: 0;
+                        margin-top: 6px;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 5px 0 5px 7px;
+                        border-color: transparent transparent transparent $accent;
+                    }
+                }
+            }
+        }
+    }
+  }
+  .stars {
+    height: 11px;
+    background: url('assets/images/stars.png') no-repeat;
+    background-size: 200px;
+    &.is_1 {
+      width: 12px;
+      background-position: 0 0;
+    }
+    &.is_3 {
+      width: 18px;
+      background-position: 0 -20px;
+    }
+    &.is_5 {
+      width: 25px;
+      background-position: 0 -40px;
+    }
+    &.is_7 {
+      width: 31px;
+      background-position: 0 -60px;
+    }
+    &.is_9 {
+      width: 38px;
+      background-position: 0 -80px;
+    }
+    &.food_list .star.is_2 {
+      width: 12px;
+      background-position: -50px 0;
+    }
+    &.is_4 {
+      width: 18px;
+      background-position: -50px -20px;
+    }
+    &.is_6 {
+      width: 25px;
+      background-position: -50px -40px;
+    }
+    &.is_8 {
+      width: 31px;
+      background-position: -50px -60px;
+    }
+    &.is_10 {
+      width: 38px;
+      background-position: -50px -80px;
+    }
+
+  }
+  .unlocks, .requirements, .ingredients {
+    display: flex;
+    .unlocked {
+      color: $accent;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      padding: 2px 10px;
+    }
+    .unlocked-stats {
+      font-size: 0.9em;
+      padding: 0 5px 0 5px;
+    }
+    img {
+      width: 25px;
+      margin-right: 5px;
+    }
+  }
+}

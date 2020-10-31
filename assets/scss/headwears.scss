@@ -1,0 +1,92 @@
+.headwears {
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  border-bottom: 1px solid $bordercolor;
+  display: flex;
+  .card-details {
+      display: inline-block;
+      line-height: 10px;
+      .image {
+          border: 2px solid #abd2f3;
+          @include imagecontainer;
+          width: 74px;
+          height: 74px;
+          img {
+              @include imagecontainer_img;
+              width: 70px;
+              height: 70px;
+              padding: 3px;
+              border: 1px solid #fff;
+          }
+      }
+      .card-type {
+          position: relative;
+          padding: 5px 0;
+          text-align: center;
+          color: $disabled;
+          line-height: 1.2em;
+      }
+  }
+  .card-info {
+      align-self: center;
+      .card-name {
+          margin-left: 6px;
+          font-size: 1.1em;
+          font-weight: 500;
+          color: $primary;
+      }
+      .card-attr {
+          margin-left: 6px;
+          .card-type_ {
+              color: $accent;
+              font-size: .9em;
+              font-weight: 600;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+          }
+          .card-type__ {
+              margin-top: 5px;
+              color: $accent;
+              font-size: .8em;
+              font-weight: 600;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+          }
+      }
+      .card-stats {
+          margin-left: 2px;
+          margin-top: 3px;
+          &.deposit {
+              font-size: 0.9em;
+              margin-top: -1px;
+          }
+          &.unlock {
+              font-size: 0.9em;
+              margin-top: -1px;
+          }
+          ul {
+              li {
+                  font-size: 0.9em;
+                  line-height: 1.5em;
+                  color: $black;
+                  position: relative;
+                  padding-left: 14px;
+                  &:before {
+                      content: '';
+                      position: absolute;
+                      left: 0;
+                      width: 0;
+                      height: 0;
+                      margin-top: 6px;
+                      width: 0;
+                      height: 0;
+                      border-style: solid;
+                      border-width: 5px 0 5px 7px;
+                      border-color: transparent transparent transparent $accent;
+                  }
+              }
+          }
+      }
+  }
+}

@@ -1,0 +1,69 @@
+$material-design-icons-font-directory-path: '~material-design-icons-iconfont/dist/fonts/';
+ 
+@import '~material-design-icons-iconfont/src/material-design-icons';
+// colors
+$disabled: #bbbbbb;
+$white: #fafafa;
+$black: #000;
+$secondary: #666666;
+$primary: #044F67;
+$textdefault: #FF0068;
+$backgroundcolor: #f2f2f2;
+$accent: #E08A1E;
+$linkcolor: #4D8FAC;
+$bordercolor: #e8ebf7;
+$cardviolet: #cba5f8;
+$cardblue: #98e4fb;
+$cardgreen: #caf371;
+$cardwhite: #b5c2cb;
+
+// mixins
+@mixin defaultfont {
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+}
+
+@mixin imagecontainer {
+    background-color: #e5ecf3;
+    border-radius: 5%;
+    border: 2px solid #abd2f3;
+    position: relative;
+    width: 74px;
+    height: 74px;
+}
+
+@mixin imagecontainer_img {
+    border: 1px solid #fff;
+    height: 70px;
+    width: 70px;
+    padding: 10px;
+    border-radius: 5%;
+    display: inline-block;
+}
+
+@mixin cardcontainer {
+    //border-radius: 10px;
+    //box-shadow: 0 .3rem 0.3rem rgba(0, 0, 0, .1);
+    //margin-bottom: .5rem;
+    border: 0;
+    background-color: $white;
+    cursor: pointer;
+    border-bottom: 1px solid #cde1ef;
+}
+
+@mixin cardcontainer_hover {
+    opacity: 0.8;
+    transition: .2s ease-in-out;
+}
+
+@mixin userselect {
+    -webkit-overflow-scrolling: touch;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
