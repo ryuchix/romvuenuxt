@@ -109,7 +109,7 @@ export default {
       this.searchHasClicked = false;
     },
     submitSearch() {
-      this.$router.push({name: 'search', params: {query: this.search}});
+      this.$router.push({name: 'search-query', params: {query: this.search}});
       this.searchHasClicked = false;
       this.search = '';
     },
