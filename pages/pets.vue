@@ -112,6 +112,12 @@ export default {
   components: {
     InfiniteLoading
   },
+  watch:{
+      $route (to, from){
+        this.fquery = to.fullPath.replace("/pets", "")
+        this.filterPets()
+      }
+  },
   head() {    
     let title_ = "Ragnarok pets database, where to get pets, pets taming item, pet fusion for Ragnarok Mobile Eternal Love"
     let url_ = 'https://www.ragnarokmobile.net/pets'

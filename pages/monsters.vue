@@ -10,9 +10,10 @@
             </template>
             <v-list tile dense flat min-width="100" >
               <v-list-item light link v-for="(race, index) in races" :key="index"
-                :class="$route.query.race == race ? '_active' : ''"
-                @click="$router.push({name: 'monsters', query: query({race:race})})">
-                <v-list-item-title dense>{{ race }}</v-list-item-title>
+                :class="$route.query.race == race ? '_active' : ''">
+                <nuxt-link :to="{name: 'monsters', query: query({race:race})}" >
+                  <v-list-item-title dense>{{ race }}</v-list-item-title>
+                </nuxt-link>
               </v-list-item>
             </v-list>
           </v-menu>
@@ -204,6 +205,12 @@ export default {
       fquery: this.$route.fullPath.replace("/monsters", "")
     }
   },
+  watch:{
+      $route (to, from){
+        this.fquery = to.fullPath.replace("/monsters", "")
+        this.filterMonsters()
+      }
+  }, 
   mounted() {
     if (Object.entries(this.$route.query).length === 0) {
       this.getMonsters();

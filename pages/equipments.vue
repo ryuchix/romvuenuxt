@@ -204,6 +204,12 @@ export default {
       fquery: this.$route.fullPath.replace("/equipments", "")
     }
   },
+  watch:{
+      $route (to, from){
+        this.fquery = to.fullPath.replace("/equipments", "")
+        this.filterEquipments()
+      }
+  },
   methods: {
     query(newQuery) {
       if (this.$route.query.position == 'Weapon') {

@@ -190,6 +190,12 @@ export default {
       fquery: this.$route.fullPath.replace("/furnitures", "")
     };
   },
+  watch:{
+      $route (to, from){
+        this.fquery = to.fullPath.replace("/furnitures", "")
+        this.filterFurnitures()
+      }
+  },
   methods: {
     query(newQuery) {
       return {

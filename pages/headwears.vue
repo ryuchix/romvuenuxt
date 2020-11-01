@@ -196,6 +196,12 @@ export default {
       fquery: this.$route.fullPath.replace("/headwears", "")
     };
   },
+  watch:{
+      $route (to, from){
+        this.fquery = to.fullPath.replace("/headwears", "")
+        this.filterHeadwears()
+      }
+  },
   methods: {
     query(newQuery) {
       return {

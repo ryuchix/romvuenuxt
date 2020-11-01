@@ -218,6 +218,12 @@ export default {
 
     };
   },
+  watch:{
+      $route (to, from){
+        this.fquery = to.fullPath.replace("/cards", "")
+        this.filterCards()
+      }
+  },
   methods: {
     query(newQuery) {
       return {

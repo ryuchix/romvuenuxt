@@ -20,54 +20,54 @@
         <section class="section3 mt-5">
           <h3 class="subtit mb-3">Ragnarok Mobile Database</h3>
           <div class="row no-gutters">
-            <router-link  tabindex :to="{ name: 'monsters'}" class="col col-3">
+            <nuxt-link  tabindex :to="{ name: 'monsters'}" class="col col-3">
               <div>
                 <div class="icons">
                   <img class="icon" src="../assets/images/icons/monster-icon.png" alt="Ragnarok Mobile Monster Icon"/>
                   <span>Monster</span>
                 </div>
               </div>
-            </router-link>
-            <router-link tabindex :to="{ name: 'cards'}" class="col col-3">
+            </nuxt-link>
+            <nuxt-link tabindex :to="{ name: 'cards'}" class="col col-3">
               <div>
                 <div class="icons">
                   <img class="icon" src="../assets/images/icons/card-icon.png" alt="Ragnarok Mobile Card Icon"/>
                   <span>Card</span>
                 </div>
               </div>
-            </router-link>
-            <router-link tabindex :to="{ name: 'equipments'}" class="col col-3">
+            </nuxt-link>
+            <nuxt-link tabindex :to="{ name: 'equipments'}" class="col col-3">
               <div>
                 <div class="icons">
                   <img class="icon" src="../assets/images/icons/armor-icon.png" alt="Ragnarok Mobile Equipment Icon"/>
                   <span>Equipment</span>
                 </div>
               </div>
-            </router-link>
-            <router-link tabindex :to="{ name: 'headwears'}" class="col col-3">
+            </nuxt-link>
+            <nuxt-link tabindex :to="{ name: 'headwears'}" class="col col-3">
               <div>
                 <div class="icons">
                   <img class="icon" src="../assets/images/icons/headwear-icon.png" alt="Ragnarok Mobile Headwear Icon"/>
                   <span>Headwear</span>
                 </div>
               </div>
-            </router-link>
-              <router-link tabindex :to="{ name: 'furnitures'}" class="col col-3">
+            </nuxt-link>
+              <nuxt-link tabindex :to="{ name: 'furnitures'}" class="col col-3">
               <div>
                 <div class="icons">
                   <img class="icon" src="../assets/images/icons/furniture-icon.png" alt="Ragnarok Mobile Furniture Icon"/>
                   <span>Furniture</span>
                 </div>
               </div>
-              </router-link>
-              <router-link tabindex :to="{ name: 'pets'}" class="col col-3">
+              </nuxt-link>
+              <nuxt-link tabindex :to="{ name: 'pets'}" class="col col-3">
               <div>
                 <div class="icons">
                   <img class="icon" src="../assets/images/icons/pet-icon.png" alt="Ragnarok Mobile Pet Icon"/>
                   <span>Pet</span>
                 </div>
               </div>
-            </router-link>
+            </nuxt-link>
               <div class="col col-3" tabindex>
                 <div class="icons">
                   <img class="icon" src="../assets/images/icons/food-icon.png" alt="Ragnarok Mobile Food Icon"/>
@@ -79,12 +79,9 @@
 
         <section class="appicons mt-2 mb-5">
           <div class="apps container center mt-4">
-            <router-link tabindex :to="{name: 'endless-tower'}" class="playstore col-12" v-ripple>
+            <nuxt-link tabindex :to="{name: 'endless-tower'}" class="playstore col-12" v-ripple>
               Endless Tower MVP/Mini List (SEA)
-            </router-link>
-            <router-link tabindex :to="{name: 'valhalla-ruins'}" class="appstore col-12" v-ripple>
-              Valhalla Ruins Map
-            </router-link>  
+            </nuxt-link>
             <!-- <div class="playstore mr-3">
               <img src="../assets/images/google-play-badge/128x128.png" alt="Download to playstore">
             </div>
@@ -100,32 +97,32 @@
             <ul class="list_news">
               <li>
                   <div class="news_tit" v-ripple>
-                    <router-link tabindex :to="{name: 'guides-safe-refining-guide'}" class="d-flex pointer">
-                      <span @click="$router.push({name: 'guides-safe-refining-guide'})" class="tit">Safe Refining Guide</span>
-                    </router-link>
+                    <nuxt-link tabindex to="/safe-refining-guide" class="d-flex pointer">
+                      <span @click="$router.push('/safe-refining-guide')" class="tit">Safe Refining Guide</span>
+                    </nuxt-link>
                   </div>
               </li>
               <li>
                   <div class="news_tit" v-ripple>
-                    <router-link tabindex :to="{name: 'guides-quiz'}" class="d-flex pointer">
-                      <span @click="$router.push({name: 'guides-quiz'})" class="tit">Monster quiz in Wasteland</span>
-                    </router-link>
+                    <nuxt-link tabindex to="/monster-quiz-in-wasteland" class="d-flex pointer">
+                      <span @click="$router.push('/monster-quiz-in-wasteland')" class="tit">Monster quiz in Wasteland</span>
+                    </nuxt-link>
                   </div>
               </li>
               <li v-for="blog in BlogsToDisplay" :key="blog.id" class>
                   <div class="news_tit" v-ripple>
-                    <router-link tabindex :to="{name: 'guide', params: {slug: blog.slug}}" class="d-flex pointer">
-                      <span @click="$router.push({name: 'guide', params: {slug: blog.slug}})" class="tit">{{ blog.title }}</span>
-                    </router-link>
+                    <nuxt-link tabindex :to="{name: 'guide-slug', params: {slug: blog.slug}}" class="d-flex pointer">
+                      <span @click="$router.push({name: 'guide-slug', params: {slug: blog.slug}})" class="tit">{{ blog.title }}</span>
+                    </nuxt-link>
                   </div>
               </li>
             </ul>
             <v-col class="text-center" cols="12" sm="12">
-              <router-link tabindex :to="{name: 'guides'}">
+              <nuxt-link tabindex :to="{name: 'guides'}">
                 <div class="my-2 see-more" v-ripple @click="$router.push({name: 'guides'})" tabindex>
                   <span>Click here to see more guides</span>
                 </div>
-              </router-link>
+              </nuxt-link>
             </v-col>
           </div>
         </section>
@@ -163,12 +160,12 @@
             </a>
           </div>
           <small class="legal center">
-            <router-link :to="{ name: 'privacy'}">
+            <nuxt-link :to="{ name: 'privacy'}">
               <div v-ripple @click="$router.push({name: 'privacy'})" class="pointer">Privacy Policy</div> 
-            </router-link>|
-            <router-link :to="{ name: 'contact'}">
+            </nuxt-link>|
+            <nuxt-link :to="{ name: 'contact'}">
               <div v-ripple @click="$router.push({name: 'contact'})" class="pointer">Contact Us</div>
-            </router-link>
+            </nuxt-link>
           </small>
         </section>
       </div>

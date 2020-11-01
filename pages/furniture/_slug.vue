@@ -169,6 +169,7 @@ export default {
     let url_ = 'https://www.ragnarokmobile.net/furniture/' + this.equipment.slug
     let keywords_ = title_ + ', Ragnarok headwear database, headwear drop, ROM, ROM Exchange price, market finance, Ragnarok, online, RO, ragnarok mobile, ragnarok m, ragnarok eternal love, database, guide, job, quest, headgear quest, monster drops, item information, skill description, skill simulator, stat calculator, ragnarok tools, ragnarok mobile english'
     let description_ = 'Get ' + name_ + ' information and attributes. Your ultimate guide for Ragnarok Mobile Eternal Love. Your source for Ragnarok M Monsters, Cards, Quests, Database, Headwears, Blueprints, Items, Market Prices, Exchange Price List and Stats and Skills calculator. ROM'
+    let image_ = 'https://www.ragnarokmobile.net/img/louyang.webp';
     return {
       title: title_,
       meta: [
@@ -181,6 +182,11 @@ export default {
           hid: 'keywords',
           name: 'keywords',
           content: keywords_
+        },
+        {
+          hid: 'image',
+          name: 'image',
+          content: image_
         },
         {
           hid: 'og:title',
@@ -200,7 +206,7 @@ export default {
         {
           hid: 'og:image',
           name: 'og:image',
-          content: 'https://www.ragnarokmobile.net/img/louyang.webp'
+          content: image_
         },
         {
           hid: 'twitter:description',
@@ -211,6 +217,11 @@ export default {
           hid: 'twitter:title',
           name: 'twitter:title',
           content: title_
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: image_
         },
       ],
       link: [

@@ -9,9 +9,16 @@
         <img v-if="result.etmini != 0" :src="result.etmini" alt="Endless Tower Mini" style="width: 100%;">
         <br><br>
         <h2 class="mb-3">Valhalla Ruins (VR) Maps</h2>
-        <p>Valhalla Ruins or Guild Ruins VR/GR is a dungeon quest for all members of the guild. The ruins consist of 5 doors, by default the portals are closed and you need Silver Medal to open it. Your need to reach a certain level to enter the dungeon, level 40, 60, 80, 100 and 120. Each door needs 40 silver medals. Unlike Endless Tower the VR/GR maps are the same across all Guilds in all channels.</p>
-        <h3>{{ result.date }}</h3>
-        <img :src="result.vr" alt="Valhalla Ruins Maps" style="width: 100%;">
+        <p><strong>New Guild Instance</strong></p>
+<p>- Silver Medal is not required for entering Guild Instance</p>
+<p>- Restriction of minimum Guild Level 2 to enter Guild Instance is lifted</p>
+<p>- 5 different levels of instances are combined into 1, and entry level is changed to 60</p>
+<p>- The way to enter the dungeon remains the same. You can enter via Ruins Entrance in Guild. The guild teammates of the same team can enter the same dungeon through the entrance</p>
+<p>- If the team got wiped, the dungeon will be reset, but the defeated Mini/MVP will not be refreshed</p>
+<br>
+<p>- Map contains normal monsters and 5 Mini/MVP. Defeating of Mini/MVP gives corresponding rewards. Rewards are account limited and only obtainable once per week</p>
+<p>- Reward Adjustment: Rewards will be doubled for defeating Mini/MVP after optimization, and two random rewards on top of the double rewards will be given as well</p>
+
         <br><br>
         <div v-if="result.etglobal != 0">
           <h2 class="mb-3">Endless Tower Global (ET)</h2>

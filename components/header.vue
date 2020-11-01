@@ -13,7 +13,7 @@
       <v-app-bar v-if="$route.name == 'index'"
       fixed
       :height="50">
-      <v-toolbar-title class="left"><img width="35px" src="@/assets/images/whitelogo.png" alt="Ragnarok Mobile">Ragnarok Mobile</v-toolbar-title>
+      <v-toolbar-title class="left" style="justify-content: end;"><img width="35px" src="@/assets/images/whitelogo.png" alt="Ragnarok Mobile">Ragnarok Mobile</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon @click.stop @click="openSearch" aria-label="Open search form">
         <v-icon >mdi-magnify</v-icon>
@@ -119,7 +119,7 @@ export default {
           this.$route.name == 'headwears' || 
           this.$route.name == 'equipments' || 
           this.$route.name == 'cards') {
-            this.$router.push({name: 'home'})
+            this.$router.push({name: 'index'})
           } else {
             this.$router.go(-1)
           }
