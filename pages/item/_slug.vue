@@ -352,17 +352,21 @@ export default {
         .catch(error => this.$router.replace({name: 'error'}))
         .finally(() => this.loading = false)
     },
-    openItem(id) {
-      axios
+    async openItem(id) {
+      await axios
         .get(constant.getItem+id)
         .then(response => (this.equipment = response.data, this.id = this.equipment.id))
         .catch(error => this.$router.replace({name: 'error'}))
         .finally(() => this.loading = false)
     },
   },
-  mounted () {
-    this.getItem();
-  }
+  async fetch() {
+    await axios
+    .get(constant.getItem + this.id)
+    .then(response => (this.equipment = response.data))
+    .finally(() => this.loading = false)
+  },
+  fetchOnServer: true,
 }
 </script>
 <style lang="scss">

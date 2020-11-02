@@ -265,13 +265,17 @@ export default {
         fullPage: false,
     }
   },
-  created () {
-    this.getMonsters()
+  async fetch() {
+    await axios
+    .get(constant.getMonster + this.id)
+    .then(response => (this.monster = response.data))
+    .finally(() => this.loading = false)
   },
+  fetchOnServer: true,
   methods:  {
     getMonsters() {
-      axios
-        .get(constant.getMonster+this.id)
+     axios
+        .get(constant.getMonster + this.id)
         .then(response => (this.monster = response.data))
         .catch(error => console.log(error))
         .finally(() => this.loading = false)

@@ -138,9 +138,13 @@ export default {
         });
     }
   },
-  mounted() {
-    this.getBlog();
-  }
+  async fetch() {
+    await axios
+    .get(constant.getBlog + this.slug)
+    .then(response => (this.blog = response.data))
+    .finally(() => this.loading = false)
+  },
+  fetchOnServer: true,
 };
 </script>
 <style lang="scss">

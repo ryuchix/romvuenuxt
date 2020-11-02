@@ -392,18 +392,21 @@ export default {
       }
       return num;
     },
-    openItem(id) {
-      axios
+    async openItem(id) {
+      await axios
         .get(constant.getEquipment+id)
         .then(response => (this.equipment = response.data, this.id = this.equipment.id))
         .catch(error => console.log(error))
         .finally(() => this.loading = false)
     },
   },
-  mounted () {
-    this.getEquipment();
-   // document.addEventListener("backbutton", this.$router.go(-1), false);
-  }
+  async fetch() {
+    await axios
+    .get(constant.getEquipment + this.id)
+    .then(response => (this.equipment = response.data))
+    .finally(() => this.loading = false)
+  },
+  fetchOnServer: true,
 }
 </script>
 <style lang="scss">

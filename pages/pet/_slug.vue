@@ -175,9 +175,13 @@ export default {
         fullPage: false,
     }
   },
-  created () {
-    this.getMonsters()
+  async fetch() {
+    await axios
+    .get(constant.getPet + this.id)
+    .then(response => (this.monster = response.data))
+    .finally(() => this.loading = false)
   },
+  fetchOnServer: true,
   methods:  {
     getMonsters() {
       axios

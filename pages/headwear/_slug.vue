@@ -257,9 +257,13 @@ export default {
         .finally(() => (this.loading = false));
     }
   },
-  mounted() {
-    this.getItem();
-  }
+  async fetch() {
+    await axios
+    .get(constant.getHeadwear + this.id)
+    .then(response => (this.equipment = response.data))
+    .finally(() => this.loading = false)
+  },
+  fetchOnServer: true,
 };
 </script>
 <style lang="scss">
