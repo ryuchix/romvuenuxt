@@ -97,7 +97,7 @@
                     </div></v-expansion-panel-header>
                   <v-expansion-panel-content>
                     <div v-for="equip in synth.materials" :key="equip.id">
-                      <div class="item-info">
+                      <div class="item-info" v-if="equip.item_id != null">
                           <div class="image is-24x24" :class="equip.item_id['type_name'] == 'Blueprint' ? 'blueprint' : ''">
                               <img v-if="equip.item_id['type'] != 'cards'" :src="equip.item_id['icon'] != null ? equip.item_id['icon'] : '' " :alt="equip.item_id['name_en'] != null ? equip.item_id['name_en'] : ''">
                               <img v-if="equip.item_id['type'] == 'cards'" src="@/assets/images/defaultcardimg.png" :alt="equip.item_id['name_en'] != null ? equip.item_id['name_en'] : ''">
@@ -112,6 +112,9 @@
                                   {{ equip.item_id['name_en'] }} x {{ equip.qty }}
                               </div>
                           </nuxt-link>
+                      </div>
+                      <div class="item-info" v-else>
+                         
                       </div>
                     </div>
                       <div class="item-info">
